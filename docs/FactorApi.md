@@ -1,0 +1,641 @@
+# IO.Swagger.Api.FactorApi
+
+All URIs are relative to *https://localhost*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**Create**](FactorApi.md#create) | **POST** /api/Factor | Create a entity
+[**Delete**](FactorApi.md#delete) | **DELETE** /api/Factor/{id} | Deletes and Entity
+[**GenerateEntityInvestmentsGraphFor**](FactorApi.md#generateentityinvestmentsgraphfor) | **GET** /api/Factor/GenerateEntityInvestmentsGraphFor/{entityId} | Generically generates a series of datapoints representing for all or one of the entitiy types.  This includes the linking of it to other entity types by joining up all the resulting entities by common investments
+[**GenerateSharedGraphDataForAll**](FactorApi.md#generatesharedgraphdataforall) | **GET** /api/Factor/GenerateSharedInvestmentsGraphDataForAll | Generically generates a series of datapoints representing for all or one of the entitiy types.  This includes the linking of it to other entity types by joining up all the resulting entities by common investments
+[**GetAll**](FactorApi.md#getall) | **GET** /api/Factor | Get all entities
+[**GetAllWithoutChildren**](FactorApi.md#getallwithoutchildren) | **GET** /api/Factor/WithoutChildren | Gets all entities but not their children
+[**GetById**](FactorApi.md#getbyid) | **GET** /api/Factor/{id} | Get Entity by ID
+[**Import**](FactorApi.md#import) | **POST** /api/Factor/import | 
+[**Patch**](FactorApi.md#patch) | **PATCH** /api/Factor/{id} | Updates an entity partially
+[**Replace**](FactorApi.md#replace) | **PUT** /api/Factor/{id} | Replaces and existing Entity.  Note this is not for partial updates, for that use PATCH. This is used for replacing the entire entity.  At the moment it is not possible to replace everything on the existing generic entity with that on the new one and  sometimes we dont want to: we dont want to replace the ID property for example, but we might want to replace  collections in the orignal item with the new collections in the new item, but this is currently not possible in the  implemantation. It just replaces simple members.  ** So if you want to do it propery, override this method in the controller for the type you want to implementa replacement  routine for.
+
+
+<a name="create"></a>
+# **Create**
+> void Create (InvestmentInfluenceFactor entity = null)
+
+Create a entity
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class CreateExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: Bearer
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new FactorApi();
+            var entity = new InvestmentInfluenceFactor(); // InvestmentInfluenceFactor | the entity to create (optional) 
+
+            try
+            {
+                // Create a entity
+                apiInstance.Create(entity);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling FactorApi.Create: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **entity** | [**InvestmentInfluenceFactor**](InvestmentInfluenceFactor.md)| the entity to create | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="delete"></a>
+# **Delete**
+> void Delete (int? id)
+
+Deletes and Entity
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class DeleteExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: Bearer
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new FactorApi();
+            var id = 56;  // int? | The id of the entity to delete
+
+            try
+            {
+                // Deletes and Entity
+                apiInstance.Delete(id);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling FactorApi.Delete: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int?**| The id of the entity to delete | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="generateentityinvestmentsgraphfor"></a>
+# **GenerateEntityInvestmentsGraphFor**
+> void GenerateEntityInvestmentsGraphFor (int? entityId)
+
+Generically generates a series of datapoints representing for all or one of the entitiy types.  This includes the linking of it to other entity types by joining up all the resulting entities by common investments
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class GenerateEntityInvestmentsGraphForExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: Bearer
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new FactorApi();
+            var entityId = 56;  // int? | 
+
+            try
+            {
+                // Generically generates a series of datapoints representing for all or one of the entitiy types.  This includes the linking of it to other entity types by joining up all the resulting entities by common investments
+                apiInstance.GenerateEntityInvestmentsGraphFor(entityId);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling FactorApi.GenerateEntityInvestmentsGraphFor: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **entityId** | **int?**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="generatesharedgraphdataforall"></a>
+# **GenerateSharedGraphDataForAll**
+> void GenerateSharedGraphDataForAll ()
+
+Generically generates a series of datapoints representing for all or one of the entitiy types.  This includes the linking of it to other entity types by joining up all the resulting entities by common investments
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class GenerateSharedGraphDataForAllExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: Bearer
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new FactorApi();
+
+            try
+            {
+                // Generically generates a series of datapoints representing for all or one of the entitiy types.  This includes the linking of it to other entity types by joining up all the resulting entities by common investments
+                apiInstance.GenerateSharedGraphDataForAll();
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling FactorApi.GenerateSharedGraphDataForAll: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getall"></a>
+# **GetAll**
+> List<InvestmentInfluenceFactor> GetAll ()
+
+Get all entities
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class GetAllExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: Bearer
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new FactorApi();
+
+            try
+            {
+                // Get all entities
+                List&lt;InvestmentInfluenceFactor&gt; result = apiInstance.GetAll();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling FactorApi.GetAll: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List<InvestmentInfluenceFactor>**](InvestmentInfluenceFactor.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getallwithoutchildren"></a>
+# **GetAllWithoutChildren**
+> List<InvestmentInfluenceFactor> GetAllWithoutChildren ()
+
+Gets all entities but not their children
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class GetAllWithoutChildrenExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: Bearer
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new FactorApi();
+
+            try
+            {
+                // Gets all entities but not their children
+                List&lt;InvestmentInfluenceFactor&gt; result = apiInstance.GetAllWithoutChildren();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling FactorApi.GetAllWithoutChildren: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List<InvestmentInfluenceFactor>**](InvestmentInfluenceFactor.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getbyid"></a>
+# **GetById**
+> void GetById (int? id)
+
+Get Entity by ID
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class GetByIdExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: Bearer
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new FactorApi();
+            var id = 56;  // int? | 
+
+            try
+            {
+                // Get Entity by ID
+                apiInstance.GetById(id);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling FactorApi.GetById: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int?**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="import"></a>
+# **Import**
+> void Import (List<InvestmentInfluenceFactor> entities = null)
+
+
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class ImportExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: Bearer
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new FactorApi();
+            var entities = new List<InvestmentInfluenceFactor>(); // List<InvestmentInfluenceFactor> |  (optional) 
+
+            try
+            {
+                apiInstance.Import(entities);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling FactorApi.Import: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **entities** | [**List&lt;InvestmentInfluenceFactor&gt;**](InvestmentInfluenceFactor.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="patch"></a>
+# **Patch**
+> void Patch (int? id, List<Operation> patchDocument = null)
+
+Updates an entity partially
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class PatchExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: Bearer
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new FactorApi();
+            var id = 56;  // int? | Id of entity to patch
+            var patchDocument = new List<Operation>(); // List<Operation> | the patched object (optional) 
+
+            try
+            {
+                // Updates an entity partially
+                apiInstance.Patch(id, patchDocument);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling FactorApi.Patch: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int?**| Id of entity to patch | 
+ **patchDocument** | [**List&lt;Operation&gt;**](Operation.md)| the patched object | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="replace"></a>
+# **Replace**
+> void Replace (int? id, InvestmentInfluenceFactor newItem = null)
+
+Replaces and existing Entity.  Note this is not for partial updates, for that use PATCH. This is used for replacing the entire entity.  At the moment it is not possible to replace everything on the existing generic entity with that on the new one and  sometimes we dont want to: we dont want to replace the ID property for example, but we might want to replace  collections in the orignal item with the new collections in the new item, but this is currently not possible in the  implemantation. It just replaces simple members.  ** So if you want to do it propery, override this method in the controller for the type you want to implementa replacement  routine for.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class ReplaceExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: Bearer
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new FactorApi();
+            var id = 56;  // int? | Id of the entity to update
+            var newItem = new InvestmentInfluenceFactor(); // InvestmentInfluenceFactor | the contents of the entity to change (optional) 
+
+            try
+            {
+                // Replaces and existing Entity.  Note this is not for partial updates, for that use PATCH. This is used for replacing the entire entity.  At the moment it is not possible to replace everything on the existing generic entity with that on the new one and  sometimes we dont want to: we dont want to replace the ID property for example, but we might want to replace  collections in the orignal item with the new collections in the new item, but this is currently not possible in the  implemantation. It just replaces simple members.  ** So if you want to do it propery, override this method in the controller for the type you want to implementa replacement  routine for.
+                apiInstance.Replace(id, newItem);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling FactorApi.Replace: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int?**| Id of the entity to update | 
+ **newItem** | [**InvestmentInfluenceFactor**](InvestmentInfluenceFactor.md)| the contents of the entity to change | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
